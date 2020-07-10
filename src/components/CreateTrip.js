@@ -42,10 +42,8 @@ class CreateTrip extends React.Component {
             id="description"
             onChange={this.onInputChange}
           ></textarea>
-          <form class="upload">
-            <input type="file" name="uploadFile" accept=".json" required />
-          </form>
-          <input type="submit" value="Submit" />
+          <input type="file" name="uploadFile" />
+          <input type="submit" value="Submit" className="button is-success" />
         </form>
       </div>
     );
@@ -53,3 +51,5 @@ class CreateTrip extends React.Component {
 }
 
 export default CreateTrip;
+
+// c77f3422cb0f4a9cbef0a0aabae3adc0
