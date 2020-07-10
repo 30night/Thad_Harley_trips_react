@@ -26,14 +26,23 @@ class Trip extends React.Component {
     return this.state.trips.map((trip, index) => {
       return (
         <div key={index}>
-          <h3>{trip.title}</h3>
-          <p> {trip.name} </p>
-          <p>{trip.description}</p>
-          <div>
-            <Link to={`/trips/${trip.id}/edit`}>Edit</Link>
-            <span onClick={() => this.deleteTrip(trip.id)}>Delete</span>
+          <div className="tile is-ancestor">
+            <div className="tile is-parent">
+              <div class="tile is-child box is-6">
+                <h3 className="title is-3">{trip.title}</h3>
+                <p className="title is-5"> {trip.name} </p>
+                <p className="subtitle is-6">{trip.description}</p>
+                <footer className="card-footer">
+                  <button className="button is-primary is-small">
+                    <Link to={`/trips/${trip.id}/edit`}>Edit</Link>
+                  </button>
+                  <button className="button is-danger is-small">
+                    <span onClick={() => this.deleteTrip(trip.id)}>Delete</span>
+                  </button>
+                </footer>
+              </div>
+            </div>
           </div>
-          <hr />
         </div>
       );
     });
@@ -46,7 +55,7 @@ class Trip extends React.Component {
   render() {
     return (
       <div>
-        <h1>this is trips page</h1>
+        <h1 class="title is-1">Your Trips</h1>
         {this.renderTrips()}
       </div>
     );
